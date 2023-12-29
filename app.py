@@ -22,7 +22,7 @@ def plot_estoque(dataframe, categoria):
     return fig
 
 # importando os dados
-dados = pd.read_csv('C:\\Users\\55669\\Documents\\Artigo_Streamlit\\estoque.csv')
+dados = pd.read_csv('estoque.csv')
 
 st.title('Análise de estoque\n')
 st.write('Nesse projeto vamos analisar a quantidade de produtos em estoque, por categoria, de uma base de dados de produtos de supermercado')
