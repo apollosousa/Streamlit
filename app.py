@@ -12,6 +12,9 @@ def mostra_qntd_linhas(dataframe):
 def plot_estoque(dataframe, categoria):
     dados_plot = dataframe.query('Categoria == @categoria')
 
+    # Ordenando o DataFrame pela coluna 'Quantidade' antes de plotar o gráfico
+    dados_plot = dados_plot.sort_values(by='Quantidade', ascending=False)
+
     fig, ax = plt.subplots(figsize=(8, 6))
     sns.barplot(x='Produto', y='Quantidade', data=dados_plot, palette='Set3')  # Definindo a paleta de cores
     ax.set_title(f'Quantidade em estoque dos produtos de {categoria}', fontsize=16)
