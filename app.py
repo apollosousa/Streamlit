@@ -19,10 +19,14 @@ def plot_estoque(dataframe, categoria):
     ax.tick_params(rotation=20, axis='x')
     ax.set_ylabel('Quantidade', fontsize=12)
 
+    # Adicionando os valores de cada barra
+    for p in ax.patches:
+        ax.annotate(f'{p.get_height():.0f}', (p.get_x() + p.get_width() / 2., p.get_height()), ha='center', va='bottom', fontsize=10, color='black', xytext=(0, 5), textcoords='offset points')
+
     return fig
 
-# importando os dados
-dados = pd.read_csv('estoque.csv')
+# importando os dados (substitua pelo caminho correto)
+dados = pd.read_csv('esoque.csv')
 
 st.title('Análise de estoque\n')
 st.write('Nesse projeto vamos analisar a quantidade de produtos em estoque, por categoria, de uma base de dados de produtos de supermercado')
